@@ -12,7 +12,7 @@
            (magit-status (file-name-directory path))))))
 (define-key dired-mode-map "V" 'dired-vc-status)
 
-
+
 ;;; スペルチェック
 ;;; 2011-03-09
 
@@ -24,27 +24,25 @@
 ;; スペルチェックには英語の辞書を使う
 (setq ispell-dictionary "american")
 
-;;; diff-mode
-;;; 2012-04-02
-(load "config/builtins/diff-mode")
 
-
 ;;; text-mode
 ;; 2012-03-18
 (load "config/builtins/text-mode")
 
-
+
 ;;; cc-mode
 ;; 2012-03-18
 (load "config/builtins/cc-mode")
 
-
+
 ;;; emacs-lisp-mode
 ;; 2012-03-18
 (load "config/builtins/emacs-lisp-mode")
 
-
+
 ;;; 追加の設定
 ;; 個別の設定があったら読み込む
 ;; 2012-03-18
-(load "config/builtins/local" t)
+(condition-case err
+    (load "config/builtins/local")
+  (error))
