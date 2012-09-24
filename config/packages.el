@@ -15,7 +15,6 @@
 (add-to-list 'el-get-recipe-path
              "~/.emacs.d/config/el-get/local-recipes")
 
-
 ;;; grep-edit
 ;; *grep*で編集できるようにする
 (el-get 'sync '(grep-edit))
@@ -24,12 +23,10 @@
             (define-key grep-mode-map
               (kbd "C-c C-c") 'grep-edit-finish-edit)))
 
-
 ;;; ポップアップ
 ;; 2012-03-16
 (el-get 'sync '(popup))
 
-
 ;;; Auto Complete
 ;; 自動補完
 (el-get 'sync '(auto-complete))
@@ -38,7 +35,6 @@
             (define-key ac-completing-map (kbd "C-n") 'ac-next)
             (define-key ac-completing-map (kbd "C-p") 'ac-previous)))
 
-
 ;;; Anything
 ;; iswitchbの代わり
 (let ((original-browse-url-browser-function browse-url-browser-function))
@@ -56,7 +52,6 @@
   (define-key anything-map (kbd "C-M-p") 'anything-previous-source)
   (setq browse-url-browser-function original-browse-url-browser-function))
 
-
 ;;; Migemo
 ;; ローマ字で日本語をインクリメンタルサーチする。
 ;; 2012-03-19
@@ -68,7 +63,6 @@
 ;; トリに入っているものを使う。
 ;; 2012-03-15
 (el-get 'sync '(ruby-mode-trunk))
-
 
 ;;; rabbit-mode
 ;; 2012-03-16
@@ -88,7 +82,8 @@
 (el-get 'sync '(rst-mode))
 
 ;; color-theme
-(load "config/packages/color-theme")
+;; 標準のカラーテーマを使用
+;;(load "config/packages/color-theme")
 
 ;; lang
 
@@ -98,6 +93,14 @@
 ;; javascript
 (load "config/packages/javascript")
 
+;; yaml
+(load "config/packages/yaml")
+
+;; markdown-mode
+(load "config/packages/markdown")
+
+;; haskell-mode
+(load "config/packages/haskell")
 ;; yasnipet, flymake
 
 ;;; 追加の設定

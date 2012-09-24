@@ -12,7 +12,12 @@
            (magit-status (file-name-directory path))))))
 (define-key dired-mode-map "V" 'dired-vc-status)
 
-
+;;; add repo url for package-list-packages
+(require 'package)
+(add-to-list 'package-archives
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
 ;;; スペルチェック
 ;;; 2011-03-09
 

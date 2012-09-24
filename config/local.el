@@ -38,7 +38,7 @@
 
 ;; alpha
 (set-frame-parameter nil 'alpha 85)
-;; generic-mode 
+;; generic-mode
 (require 'generic-x)
 
 ;; 行番号の表示
@@ -48,9 +48,10 @@
 (setq ring-bell-function 'ignore)
 
 ;; OSX <-> Emacsのクリップボード共有
-(setq x-select-enable-clipboard nil)
-(setq x-select-enable-primary t)
-(setq select-active-regions nil)
+(setq x-select-enable-clipboard t)
+(global-set-key "C-y" 'x-clipboard-yank)
+;;(setq x-select-enable-primary t)
+;;(setq select-active-regions t)
 
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
