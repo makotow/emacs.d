@@ -62,11 +62,11 @@
 ;; Emacsにバンドルされているruby-modeは古いのでRubyのリポジ
 ;; トリに入っているものを使う。
 ;; 2012-03-15
-(el-get 'sync '(ruby-mode-trunk))
+(el-get 'sync '(ruby-mode))
 
 ;;; rabbit-mode
 ;; 2012-03-16
-(el-get 'sync '(rabbit-mode))
+;(el-get 'sync '(rabbit-mode))
 
 ;;; run-test
 ;; テスト実行
@@ -79,7 +79,7 @@
 ;;; rst-mode
 ;; reStructuredText編集用のモード
 ;; 2012-03-24
-(el-get 'sync '(rst-mode))
+;(el-get 'sync '(rst-mode))
 
 ;; color-theme
 ;; 標準のカラーテーマを使用
@@ -88,7 +88,7 @@
 ;; lang
 
 ;scala
-(load "config/packages/scala")
+;(load "config/packages/scala")
 
 ;; javascript
 (load "config/packages/javascript")

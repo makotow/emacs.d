@@ -22,15 +22,14 @@
                  (".*monaco-bold-.*-mac-roman" . 0.9)))
     (add-to-list 'face-font-rescale-alist elt)))
 
-;;フレームの設定もここへいれてしまう
-(setq default-frame-alist
-      (append '( (cursor-color . "Navy")
-                 (height . 70)
-                 (top . 50)
-                 (left . 120)
-                 (width . 100)
-                 )
-              default-frame-alist))
+(when window-system
+  (if (>= (x-display-pixel-width) 800) (setq width-gain 0.6) (setq width-gain 0.8))
+  (if (>= (x-display-pixel-height) 1000) (setq height-gain 0.7) (setq height-gain 0.87))
+  (set-frame-size (selected-frame)
+                  (floor (/ (* (x-display-pixel-width) width-gain) (frame-char-width)))
+                  (floor (/ (* (x-display-pixel-height) height-gain) (frame-char-height))))
+)
+
 
 ;; don't show startup
 (setq inhibit-startup-message t)
