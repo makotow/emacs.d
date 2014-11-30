@@ -90,6 +90,9 @@
 ;scala
 ;(load "config/packages/scala")
 
+;; golang
+(load "config/packages/go")
+
 ;; javascript
 (load "config/packages/javascript")
 
